@@ -3,10 +3,11 @@ import React from "react";
 
 const PromoBanner = () => {
   return (
-    <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg p-8 shadow-md flex justify-between items-center m-6">
+
+    <div className="bg-gradient-to-r from-gray-200 to-gray-400  p-8 shadow-md flex justify-between items-center gap-6 md:gap-0 ">
       {/* Left Side: Text Content */}
       <div>
-        <h2 className="text-2xl font-bold text-gray-800 mb-2">
+        <h2 className="text-lg md:text-3xl font-bold text-gray-800 mb-2">
           Hire the best developers and designers around!
         </h2>
       </div>

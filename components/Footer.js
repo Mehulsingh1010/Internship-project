@@ -1,5 +1,6 @@
 // components/Footer.js
 "use client";
+import Link from "next/link";
 import React from "react";
 import {
   FaFacebookF,
@@ -10,7 +11,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-50 py-12 mt-10">
+    <footer className="bg-gray-50 py-12 ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -18,8 +19,17 @@ const Footer = () => {
           <div className="flex flex-col items-start">
             <div className="mb-4">
               {/* Placeholder for Logo */}
-              <div className="w-24 h-8 bg-gray-300 rounded-md mb-2"></div>
-              <span className="text-gray-500 font-medium">IK Developers</span>
+              <Link href="/">
+                <div className="w-14 h-14  rounded-md mb-2">
+                  <img
+                    src="asscets/logo-removebg-preview (1).png"
+                    className="h-full"
+                  />
+                </div>
+              </Link>
+              <span className="text-black font-bold">
+                Secret<span className="text-blue-700">Code</span>Wave
+              </span>
             </div>
             <p className="text-gray-600 mb-4">
               Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -29,14 +39,14 @@ const Footer = () => {
             <div className="flex space-x-4">
               <div className="bg-white shadow-md rounded-md p-2">
                 <img
-                  src="/google-badge.png"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8ULGKovI9LDh-tYCymrpwIyi4C8KXfyC9vA&s"
                   alt="Google Badge"
                   className="h-8"
                 />
               </div>
               <div className="bg-white shadow-md rounded-md p-2">
                 <img
-                  src="/performance-score.png"
+                  src="https://media.istockphoto.com/id/1494206458/vector/calling-icon-call-icon-telephone-reception-vector.jpg?s=612x612&w=0&k=20&c=0FuOg7NoZvfwM5LG2vDUjo_m-7EoNlKQWGfYiJ5GeG4="
                   alt="Performance Score"
                   className="h-8"
                 />
@@ -49,39 +59,44 @@ const Footer = () => {
             <h3 className="text-gray-800 font-semibold mb-4">Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-600 hover:text-purple-600">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-purple-600">
+                <Link
+                  href="/Services"
+                  className="text-gray-600 hover:text-purple-600"
+                >
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-purple-600">
-                  Case Studies
-                </a>
+                <Link
+                  href="/About-us"
+                  className="text-gray-600 hover:text-purple-600"
+                >
+                  About us
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-purple-600">
-                  How it works
-                </a>
+                <Link
+                  href="/Contact-us"
+                  className="text-gray-600 hover:text-purple-600"
+                >
+                  Contact us
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-purple-600">
-                  Blog
-                </a>
+                <Link
+                  href="/Hire"
+                  className="text-gray-600 hover:text-purple-600"
+                >
+                  Hire
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-purple-600">
+                <Link
+                  href="/Careers"
+                  className="text-gray-600 hover:text-purple-600"
+                >
                   Careers
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-purple-600">
-                  Areas We Serve
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -90,36 +105,36 @@ const Footer = () => {
           <div className="flex flex-col items-start">
             <h3 className="text-gray-800 font-semibold mb-4">Contact us</h3>
             <p className="text-gray-600 mb-2">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
+              16/592,New,Makronia Rd,near ravidas mangal bhavan,Sagar,Madhya
+              Pradesh,470004
             </p>
-            <p className="text-gray-600 mb-4">+923183561921</p>
+            <p className="text-gray-600 mb-4">+91-6263873264</p>
             {/* Social Media Icons */}
             <div className="flex space-x-4">
-              <a
-                href="#"
+              <Link
+                href="https://www.facebook.com/profile.php?id=61567324357083"
                 className="text-gray-500 hover:text-purple-600 p-2 rounded-full bg-white shadow-md"
               >
                 <FaFacebookF />
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href="https://x.com/prefer_coding"
                 className="text-gray-500 hover:text-purple-600 p-2 rounded-full bg-white shadow-md"
               >
                 <FaTwitter />
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href="https://www.instagram.com/prefercodingsecret/profilecard/?igsh=MXhxcmgyZWx3eGp0dg== "
                 className="text-gray-500 hover:text-purple-600 p-2 rounded-full bg-white shadow-md"
               >
                 <FaInstagram />
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href="https://www.linkedin.com/company/prefer-coding-secret/posts/?feedView=all"
                 className="text-gray-500 hover:text-purple-600 p-2 rounded-full bg-white shadow-md"
               >
                 <FaLinkedinIn />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -127,7 +142,7 @@ const Footer = () => {
         {/* Footer Bottom: Copyright */}
         <div className="mt-12 border-t border-gray-200 pt-8 text-center">
           <p className="text-gray-500">
-            &copy; 2023 Copyright by IK Developers. All rights reserved.
+            &copy; 2023 Copyright by SecretCodeWave. All rights reserved.
           </p>
         </div>
       </div>

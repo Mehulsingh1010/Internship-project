@@ -21,9 +21,9 @@ export default function Home() {
       <HeroSection />
       <SoftwareSection />
       <PartnerSection />
-      <TestimonialSlider />
       <CaseStudies />
       <SoftwareBuildingSection />
+      <TestimonialSlider />
       <DesignApproachSection />
       <TechStackSection />
       <Timeline />

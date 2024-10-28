@@ -60,11 +60,11 @@ const TestimonialSlider = () => {
   }, [current]);
 
   return (
-    <div className=" h-auto w-auto bg-white">
+    <div className=" h-auto w-auto bg-gradient-to-r from-gray-100 to-gray-300">
       <div className="max-w-4xl mx-auto px-4 py-10 text-center">
-        <h2 className="text-3xl font-bold mb-6 text-black">
-          Why customers love working with us
-        </h2>
+        <div className="h-1 w-14 relative md:left-[46%] left-[40%] bg-gradient-to-r from-[#F76680] to-[#57007B] mb-4"></div>
+        <h2 className="md:text-3xl text-2xl text-gray-500">Why customers love</h2>
+        <h2 className="md:text-3xl text-2xl  font-bold mb-6 text-black">working with us</h2>
 
         <div className="relative bg-gray-100 p-8 rounded-lg shadow-md">
           {/* Display feedback */}

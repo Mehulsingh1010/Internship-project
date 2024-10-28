@@ -72,7 +72,7 @@ const ReviewSlider = () => {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto py-16 px-4 sm:px-8 bg-[#F9F9FF]">
+    <div className="w-full max-w-7xl mx-auto py-16 px-4 sm:px-8   bg-gradient-to-r from-gray-100 to-gray-200">
       <h1 className="text-3xl md:text-4xl font-bold text-center mb-12 text-black">
         Services we offer
       </h1>
@@ -89,7 +89,7 @@ const ReviewSlider = () => {
               className="w-full flex items-center flex-shrink-0 p-2 sm:p-4 md:p-6 lg:p-8"
             >
               <div
-                className={`bg-white h-[100%] md:h-[110%] rounded-lg relative left-[10%] md:left-[32%] shadow-md p-6 border w-[80%] md:w-[40%] border-pink-300 mb-6 ${
+                className={`bg-[#F9F9FF] h-[100%] md:h-[110%] rounded-lg relative left-[10%] md:left-[32%] shadow-md p-6 border w-[80%] md:w-[40%] border-pink-300 mb-6 ${
                   currentIndex === Math.floor(index / 3)
                     ? "border-pink-500"
                     : "border-gray-100"

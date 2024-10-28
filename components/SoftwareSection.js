@@ -3,7 +3,7 @@ const SoftwareSection = () => {
     <section className="flex flex-col lg:flex-row items-center justify-between bg-white p-8 lg:p-16 space-y-8 lg:space-y-0">
       {/* Text Section */}
       <div className="lg:w-1/2 space-y-6">
-        <h2 className="text-4xl font-bold text-gray-900">
+        <h2 className="text-3xl md:text-5xl  font-bold  text-gray-900">
           Leading companies trust us
           <br />
           <span className="text-indigo-600">to develop software</span>

@@ -4,20 +4,20 @@ import Image from "next/image";
 
 const SoftwareBuildingSection = () => {
   return (
-    <div className="bg-white py-12 px-4 sm:px-6 lg:px-8">
+    <div className="bg-white pb-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-base text-purple-600 font-semibold tracking-wide uppercase">
+          <h2 className="text-2xl md:text-3xl text-purple-600 font-semibold tracking-wide uppercase">
             Way of building
           </h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          <p className="mt-2 text-4xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
             Great Software
           </p>
         </div>
 
         {/* Main content */}
-        <div className="lg:flex lg:items-center lg:space-x-10">
+        <div className="lg:flex lg:items-center lg:space-x-10 p-2">
           {/* Text Section */}
           <div className="lg:w-1/2">
             <h3 className="text-2xl font-bold text-gray-900">

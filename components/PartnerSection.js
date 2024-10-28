@@ -142,14 +142,17 @@ const PartnerSection = () => {
   }, []);
 
   return (
-    <section className="bg-white py-12 px-4 lg:px-16 relative">
+    <section className="bg-gradient-to-r from-gray-100 to-gray-300 py-12 px-4 lg:px-16 relative">
       {/* Section Text */}
-      <div className="text-center mb-8">
-        <h3 className="text-lg lg:text-2xl font-medium text-gray-800">
+      <div className="text-center md:text-start mb-8">
+        <div className=" relative left-[40%] md:left-[1%] h-1 w-14 bg-gradient-to-r from-[#F76680] to-[#57007B] mb-4"></div>
+        <h3 className="text-lg md:text-3xl font-medium mb-1 text-gray-600">
           Meet the People
         </h3>
-        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
-          <span className="text-indigo-600">We are Working With</span>
+        <h2 className="text-2xl md:text-5xl font-bold text-gray-900">
+          <span className="text-indigo-600 mb-2">
+            We are Working <br /> With
+          </span>
         </h2>
       </div>
 
@@ -157,7 +160,7 @@ const PartnerSection = () => {
       <div className="relative">
         <div
           ref={scrollRef}
-          className="flex items-center justify-center space-x-8 overflow-x-auto scrollbar-hide py-4 lg:py-6 bg-gray-100 rounded-lg shadow-lg"
+          className="flex items-center justify-center space-x-8 overflow-x-auto scrollbar-hide py-4 lg:py-6 bg-gray-100  shadow-lg"
         >
           <img
             src="https://s3-alpha-sig.figma.com/img/1567/6730/37c0d13adde8d39518de9cd7efe59c10?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=isVDr2JNmhxuueFnz-71tedysPg0CjLBY6xdJRsZIcmt8xoRKUFjOVF~1OBd7Ep4tgC2OF65WBnmi2cgUGJeGarHDPR139uGCO64M7f8dT3fxIgGy1aYoysb0by~yi-psmximIp3SXxgcm8ocQLpuEPo3SpzxpTew84TaRh9zWPoetDlDFme65rPLnrWKRMYSGQbJ-8g7W4Dt7xdXUFy1TRlFGEp95L8K~068tDKowD3krjJ1u5tT0wAdXCdzzIU5IaCExlMqP4UEciCqR9EssTL7nE2GOTtjF75pe5ez6GOdueyt-bF~yeWRR8KCiSikletrE7pC87lf3OFyd4J4g__"

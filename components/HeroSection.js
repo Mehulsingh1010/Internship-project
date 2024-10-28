@@ -3,11 +3,11 @@ import Image from "next/image"; // For Next.js Image optimization
 
 const HeroSection = () => {
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white py-16 md:p-6">
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
         {/* Text Section */}
         <div className="md:w-1/2">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
             Great <span className="text-purple-600">Product</span> is
             <br />
             <span className="text-purple-600">built by great teams</span>
