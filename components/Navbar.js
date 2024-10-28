@@ -19,34 +19,32 @@ const Navbar = () => {
         <div className="flex items-center space-x-2">
           {/* Replace the src with the path to your logo */}
           <Image
-            src="/logo-placeholder.png" // Ensure this path is inside the public folder
+            src="/asscets/logo-removebg-preview (1).png" // Ensure this path is inside the public folder
             alt="Logo"
             width={32}
             height={32}
             className="h-8"
           />
           <span className="text-xl font-semibold text-gray-900">
-            Sk developers
+            Secret<span className=" text-blue-600">Code</span>Wave
           </span>
         </div>
 
         {/* Desktop Navigation Links */}
         <ul className="hidden md:flex space-x-8 text-gray-700 font-medium">
           <li>
-            <Link href="#">About us</Link>
-          </li>
-          <li>
             <Link href="#">Services</Link>
           </li>
           <li>
+            <Link href="#">About us </Link>
+          </li>
+          {/*<li>
             <Link href="#">Case Studies</Link>
-          </li>
+          </li>*/}
           <li>
-            <Link href="#">Blog</Link>
+            <Link href="#">Contact us</Link>
           </li>
-          <li>
-            <Link href="#">How it Works</Link>
-          </li>
+
           <li>
             <Link href="#">Hire</Link>
           </li>
@@ -89,19 +87,13 @@ const Navbar = () => {
         <div className="md:hidden mt-4 bg-white shadow-md">
           <ul className="flex flex-col space-y-6 items-center text-gray-700 font-medium py-4">
             <li>
-              <Link href="#">About us</Link>
-            </li>
-            <li>
               <Link href="#">Services</Link>
             </li>
             <li>
-              <Link href="#">Case Studies</Link>
+              <Link href="#">About us</Link>
             </li>
             <li>
-              <Link href="#">Blog</Link>
-            </li>
-            <li>
-              <Link href="#">How it Works</Link>
+              <Link href="#">Contact us</Link>
             </li>
             <li>
               <Link href="#">Hire</Link>
