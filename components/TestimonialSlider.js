@@ -14,7 +14,7 @@ const testimonials = [
   },
   {
     id: 2,
-    text: "Alcaline Solutions has been instrumental in transforming our online presence. Their expertise in web design and digital marketing has significantly boosted our customer engagement.",
+    text: "Alcaline Solutions has been instrumental in transforming our online presence. Their expertise has significantly boosted our customer engagement.",
     author: "Romeena De Silva",
     role: "Marketing Director",
     avatar: "/avatar.png"
