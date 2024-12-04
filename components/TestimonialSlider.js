@@ -41,7 +41,7 @@ const TestimonialSlider = () => {
   }
 
   return (
-    <div className="w-full h-[70vh] bg-white">
+    <div className="w-full h-[82vh] bg-white">
       <main className="max-w-7xl mx-auto px-4 py-16">
         <section className="space-y-12">
           <div className="space-y-4 text-center">
