@@ -1,82 +1,99 @@
-// components/DesignApproachSection.js
+import React from 'react'
 
-const designApproachData = [
+const features = [
   {
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    ),
     title: "UX Driven Engineering",
-    description:
-      "Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code.",
-    icon: "/path-to-icon-ux.svg", // replace with actual icon path
+    color: "bg-slate-900",
   },
   {
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+      </svg>
+    ),
     title: "Developing Shared Understanding",
-    description:
-      "Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code.",
-    icon: "/path-to-icon-develop.svg", // replace with actual icon path
+    color: "bg-blue-400",
   },
   {
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    ),
     title: "Proven Experience and Expertise",
-    description:
-      "Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code.",
-    icon: "/path-to-icon-expertise.svg", // replace with actual icon path
+    color: "bg-pink-500",
   },
   {
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      </svg>
+    ),
     title: "Security & Intellectual Property (IP)",
-    description:
-      "Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code.",
-    icon: "/path-to-icon-security.svg", // replace with actual icon path
+    color: "bg-emerald-400",
   },
   {
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+      </svg>
+    ),
     title: "Code Reviews",
-    description:
-      "Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code.",
-    icon: "/path-to-icon-code-reviews.svg", // replace with actual icon path
+    color: "bg-gradient-to-br from-orange-300 to-orange-400",
   },
   {
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+      </svg>
+    ),
     title: "Quality Assurance & Testing",
-    description:
-      "Unlike other companies, we are a UX first development company. Projects are driven by designers and they make sure design and experiences translate to code.",
-    icon: "/path-to-icon-qa.svg", // replace with actual icon path
+    color: "bg-purple-500",
   },
-];
+]
 
-const DesignApproachSection = () => {
-  return (
-    <div className="py-12 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <h2 className="text-base text-purple-600 font-semibold tracking-wide uppercase">
-            Our design and
-          </h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            Development Approach
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {designApproachData.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
-            >
-              <div className="flex items-center">
-                <div className="flex-shrink-0">
-                  <img className="h-12 w-12" src={item.icon} alt={item.title} />
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg leading-6 font-medium text-gray-900">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-gray-600">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+const FeatureCard = ({ icon, title, color }) => (
+  <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 ease-in-out">
+    <div className="flex gap-4 p-6">
+      <div className={`p-3 rounded-2xl ${color}`}>
+        <div className="text-white">{icon}</div>
+      </div>
+      <div className="space-y-2">
+        <h3 className="font-semibold text-xl">{title}</h3>
+        <p className="text-gray-600">
+          Unlike other companies, we are a{" "}
+          <span className="text-blue-400 font-medium">UX first</span>{" "}
+          development company. Projects are driven by designers and they make sure design and experiences translate to code.
+        </p>
       </div>
     </div>
-  );
-};
+  </div>
+)
 
-export default DesignApproachSection;
+const designApproachData = () => {
+  return (
+    <div className="max-w-7xl mx-auto px-4 py-16">
+      <div className="text-center mb-16">
+        <div className="flex flex-col items-center">
+          <div className="w-12 h-1 bg-purple-600 mb-6" />
+          <h1 className="text-4xl font-medium mb-2">Our design and</h1>
+          <h2 className="text-4xl font-bold">development approach</h2>
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-6">
+        {features.map((feature, index) => (
+          <FeatureCard key={index} {...feature} />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export default designApproachData
+

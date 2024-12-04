@@ -1,77 +1,171 @@
-// components/TechStackSection.js
-"use client";
-// components/TechStackSection.js
-"use client";
+'use client'
+import React, { useState } from 'react';
+import Image from 'next/image';
 
-const techStackData = {
-  techStack: [
+const techCategories = {
+  Backend: [
     {
-      name: "Node.js",
-      icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFu963SmaEElqJi1r5YiYE7L4Je0o-sbRz09QefiKJQYQuUCVvBq1kWLrWca-xLLObqKg&usqp=CAU",
+      name: 'Node.js',
+      imageUrl: 'https://nodejs.org/static/images/logo.svg',
+      alt: 'Node.js logo - JavaScript runtime built on Chrome V8 JavaScript engine'
     },
     {
-      name: "PHP",
-      icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXalRyF7J7QRLkJfMwCMqA47UUDCFdHJ-dFQ&s",
+      name: 'PHP',
+      imageUrl: 'https://www.php.net/images/logos/new-php-logo.svg',
+      alt: 'PHP logo - Server-side scripting language'
     },
     {
-      name: "MySQL",
-      icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa-5LhP_Q8i_JBK8mMzn-ApcwLPH5UhTF76A&s",
+      name: 'Python',
+      imageUrl: 'https://www.python.org/static/community_logos/python-logo-generic.svg',
+      alt: 'Python logo - High-level programming language'
     },
     {
-      name: "Java",
-      icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa-5LhP_Q8i_JBK8mMzn-ApcwLPH5UhTF76A&s",
+      name: 'Ruby on Rails',
+      imageUrl: 'https://rubyonrails.org/images/rails-logo.svg',
+      alt: 'Ruby on Rails logo - Web application framework'
     },
     {
-      name: ".NET Core",
-      icon: "https://cutecdn.codingdojo.com/svg_images/curriculum/new_icon.svg",
+      name: 'Java',
+      imageUrl: 'https://www.oracle.com/a/ocom/img/cb71-java-logo.png',
+      alt: 'Java logo - Object-oriented programming language'
     },
     {
-      name: "Python",
-      icon: "https://banner2.cleanpng.com/20181128/cbr/kisspng-python-programming-basics-for-absolute-beginners-michigan-python-user-group-5-jul-2-18-1713916787253.webp",
+      name: '.NET Core',
+      imageUrl: 'https://dotnet.microsoft.com/static/images/logo.png',
+      alt: '.NET Core logo - Free, open-source development platform'
     },
     {
-      name: "Rails",
-      icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB0E4cjfBCciqluZbg0fEn4q1sX9LjnIFawg-eMMN84MDvEkEIg9qHa4MKDCVhXh38Mqo&usqp=CAU",
-    },
-    {
-      name: "Golang",
-      icon: "https://ih1.redbubble.net/image.5592765373.0871/st,small,507x507-pad,600x600,f8f8f8.jpg",
-    },
-    {
-      name: "MongoDB",
-      icon: "https://cdn.worldvectorlogo.com/logos/mongodb-icon-2.svg",
-    },
-    {
-      name: "React",
-      icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlGmKtrnxElpqw3AExKXPWWBulcwjlvDJa1Q&s",
-    },
+      name: 'Go',
+      imageUrl: 'https://go.dev/images/go-logo-blue.svg',
+      alt: 'Go logo - Programming language created by Google'
+    }
   ],
+  Frontend: [
+    {
+      name: 'React',
+      imageUrl: 'https://reactjs.org/logo-og.png',
+      alt: 'React logo - JavaScript library for building user interfaces'
+    },
+    {
+      name: 'Vue.js',
+      imageUrl: 'https://vuejs.org/images/logo.png',
+      alt: 'Vue.js logo - Progressive JavaScript framework'
+    },
+    {
+      name: 'Angular',
+      imageUrl: 'https://angular.io/assets/images/logos/angular/angular.svg',
+      alt: 'Angular logo - Platform for building mobile and desktop web applications'
+    }
+  ],
+  Databases: [
+    {
+      name: 'MySQL',
+      imageUrl: 'https://www.mysql.com/common/logos/logo-mysql-170x115.png',
+      alt: 'MySQL logo - Open-source relational database management system'
+    },
+    {
+      name: 'MongoDB',
+      imageUrl: 'https://www.mongodb.com/assets/images/global/leaf.png',
+      alt: 'MongoDB logo - Document-oriented NoSQL database'
+    },
+    {
+      name: 'PostgreSQL',
+      imageUrl: 'https://www.postgresql.org/media/img/about/press/elephant.png',
+      alt: 'PostgreSQL logo - Advanced open-source database'
+    }
+  ],
+  CMS: [
+    {
+      name: 'WordPress',
+      imageUrl: 'https://s.w.org/style/images/about/WordPress-logotype-standard.png',
+      alt: 'WordPress logo - Content management system'
+    },
+    {
+      name: 'Drupal',
+      imageUrl: 'https://www.drupal.org/files/Wordmark_blue_RGB.png',
+      alt: 'Drupal logo - Content management framework'
+    }
+  ],
+  CloudTesting: [
+    {
+      name: 'Jenkins',
+      imageUrl: 'https://www.jenkins.io/images/jenkins-logo.svg',
+      alt: 'Jenkins logo - Open-source automation server'
+    },
+    {
+      name: 'Selenium',
+      imageUrl: 'https://www.selenium.dev/images/selenium_logo_square_green.png',
+      alt: 'Selenium logo - Web browser automation tool'
+    }
+  ],
+  DevOps: [
+    {
+      name: 'Docker',
+      imageUrl: 'https://www.docker.com/sites/default/files/d8/2019-07/vertical-logo-monochromatic.png',
+      alt: 'Docker logo - Platform for developing, shipping, and running applications'
+    },
+    {
+      name: 'Kubernetes',
+      imageUrl: 'https://kubernetes.io/images/kubernetes-horizontal-color.png',
+      alt: 'Kubernetes logo - Container orchestration platform'
+    }
+  ]
 };
 
 const TechStackSection = () => {
-  return (
-    <div className="py-12 bg-white ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8">
-          <h2 className="text-base text-purple-600 font-semibold tracking-wide uppercase">
-            Our
-          </h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            Tech Stack
-          </p>
-        </div>
+  const [activeCategory, setActiveCategory] = useState('Backend');
 
-        {/* Icons Grid */}
-        <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-          {techStackData.techStack.map((tech, index) => (
-            <div key={index} className="flex justify-center mb-8 p-3">
-              <img src={tech.icon} alt={tech.name} className="h-12 w-12" />
-            </div>
-          ))}
+  return (
+    <div className="max-w-7xl mx-auto px-4 py-16">
+      {/* Header */}
+      <div className="text-center mb-16">
+        <div className="inline-block">
+          <h2 className="text-4xl font-medium mb-2">
+            Our
+            <div className="h-1 bg-purple-600 mt-2"></div>
+          </h2>
         </div>
+        <h1 className="text-4xl font-bold">Tech Stack</h1>
+      </div>
+
+      {/* Category Navigation */}
+      <div className="flex flex-wrap justify-center gap-8 mb-16">
+        {Object.keys(techCategories).map((category) => (
+          <button
+            key={category}
+            onClick={() => setActiveCategory(category)}
+            className={`text-lg font-medium relative ${
+              activeCategory === category ? 'text-purple-600' : 'text-gray-600'
+            }`}
+          >
+            {category}
+            {activeCategory === category && (
+              <div className="absolute -bottom-2 left-0 w-full h-1 bg-purple-600"></div>
+            )}
+          </button>
+        ))}
+      </div>
+
+      {/* Tech Grid */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
+        {techCategories[activeCategory].map((tech) => (
+          <div key={tech.name} className="flex flex-col items-center">
+            <div className="relative w-32 h-32 mb-4">
+              <Image
+                src={tech.imageUrl}
+                alt={tech.alt}
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </div>
+            <span className="text-center font-medium">{tech.name}</span>
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
 export default TechStackSection;
+

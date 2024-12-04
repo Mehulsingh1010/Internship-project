@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import PartnerSection from "@/components/PartnerSection";
 import PromoBanner from "@/components/PromoBanner";
 import ReviewSlider from "@/components/ReviewSlider";
+import ServicesSection from "@/components/Services";
 import SoftwareBuildingSection from "@/components/SoftwareBuildingSection";
 import SoftwareSection from "@/components/SoftwareSection";
 import TechStackSection from "@/components/techStackData";
@@ -18,19 +19,20 @@ export default function Home() {
   return (
     <div className=" overflow-hidden">
       <Navbar />
-      <HeroSection />
+      <HeroSection /> 
       <SoftwareSection />
+      <ServicesSection />
       <PartnerSection />
-      <CaseStudies />
-      <SoftwareBuildingSection />
       <TestimonialSlider />
+      <CaseStudies />
+      {/* <SoftwareBuildingSection />
       <DesignApproachSection />
       <TechStackSection />
       <Timeline />
       <FeaturedResources />
       <ReviewSlider />
       <PromoBanner />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }

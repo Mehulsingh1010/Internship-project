@@ -1,76 +1,152 @@
-// components/SoftwareBuildingSection.js
+/* eslint-disable react/no-unescaped-entities */
+import Image from "next/image"
+import Link from "next/link"
 
-import Image from "next/image";
-
-const SoftwareBuildingSection = () => {
+const SoftwareBuildingSection=()=>{
   return (
-    <div className="bg-white pb-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl text-purple-600 font-semibold tracking-wide uppercase">
-            Way of building
-          </h2>
-          <p className="mt-2 text-4xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            Great Software
-          </p>
-        </div>
+    <div className="max-w-7xl mx-auto px-4 py-12">
+      {/* Header Section */}
+      <div className="text-center mb-20">
+        <p className="text-xl mb-4">Way of building</p>
+        <h1 className="text-5xl font-bold">Great Software</h1>
+      </div>
 
-        {/* Main content */}
-        <div className="lg:flex lg:items-center lg:space-x-10 p-2">
-          {/* Text Section */}
-          <div className="lg:w-1/2">
-            <h3 className="text-2xl font-bold text-gray-900">
-              Build the right team to scale
-            </h3>
-            <p className="mt-4 text-gray-600">
-              Finding the right talent is not easy. We help you find the talent
-              that suits your needs, follows your processes, and sticks with you
-              long term (not the case with freelancers).
+      {/* Main Content */}
+      <div className="space-y-24">
+        {/* First Section */}
+        <section className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6">
+            <h2 className="text-4xl font-bold">Build the right team to scale</h2>
+            <p className="text-gray-600 text-lg">
+              Finding the right talent is not easy. We help you find the talent that suits your needs, follows your processes, and sticks with you long term (not the case with freelancers
             </p>
-            <p className="mt-4 text-gray-600">
-              Our{" "}
-              <a href="#" className="text-purple-600 underline">
-                delivery model
-              </a>{" "}
-              helps you cut costs and deliver within budget.
-            </p>
-
-            {/* Testimonial */}
-            <div className="mt-8 bg-purple-50 p-4 rounded-md">
-              <p className="text-pink-600 italic">
-                &quot Simform is quick to identify larger problem with the
-                Software so we decided to expand our scope to build new modules
-                &quoat
+            <div>
+              <p className="text-lg">
+                Our <Link href="#" className="text-pink-600 hover:text-pink-700">delivery model</Link> helps you cut costs and deliver within budget.
               </p>
-              <div className="flex items-center mt-4">
-                <img
-                  src="https://s3-alpha-sig.figma.com/img/b9ad/da40/9ebf32654a8f9b76dff8ea4c280bafca?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=B63rTHYOC95g-2kWdy-oiBgHCjslov8WcidSavx1RKZ39C04d8F02bvcge9n4PEqnxrxs9bBIbTBhenQNwQXPXB~xSBrwDXqZ559CN8i7HT2UTVYs0hSRYNsvxTyOXM~vuVfKTnvB6E48uempsC0bnKM~QxAMnTSYMT5qDbU8aIfMrdgS7YnBzRDHlGFwkWG5h20j4gPGj0ElLbZnXyi6SxPKA2uM1MMGSPMTr2euetwu5tOAGV0Y8UboRUusgFA3nOWX7oqT5f-xsIScGRU~ci5xKQ21cljJC1Yg0yzonDZVUD1Eq~DMuQqlQlBGE1Ryw-yIrIXR-MrwO5Ldwsz2g__" // replace with actual avatar path
-                  alt="Jeewa Markram"
-                  className="w-10 h-10 rounded-full"
+            </div>
+            <div className="border-l-4 border-pink-600 pl-4 py-2">
+              <blockquote className="text-lg italic text-pink-600">
+                "Simform is quick to identify larger problem with the Software so we decided to expand our scope to build new modules"
+              </blockquote>
+              <div className="flex items-center gap-3 mt-4">
+                <Image
+                  src="/placeholder.svg"
+                  alt="CEO"
+                  width={48}
+                  height={48}
+                  className="rounded-full"
                 />
-                <div className="ml-3">
-                  <p className="text-gray-900 font-medium">Jeewa Markram</p>
-                  <p className="text-gray-500 text-sm">CEO</p>
+                <div>
+                  <p className="font-semibold">Jeewa markram</p>
+                  <p className="text-gray-600">CEO</p>
                 </div>
               </div>
             </div>
           </div>
-
-          {/* Image Section */}
-          <div className="mt-10 lg:mt-0 lg:w-1/2">
-            <img
-              src="https://s3-alpha-sig.figma.com/img/a01b/38ad/f465e575afbd6e169245a71bdb4fb796?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Wz84-2qCb-snP4x3U-DDixh~nXTriFivYNyp9vRCAs3ylzXjYjHtrag2TlXeHtFPGmImGyfTmjUUAJmdbJF7K743T3p~Mahmn35deuojQTUWMSYOvKEHF9DeBnGZqenHyNi99EVNcQCKypNlYz-OD6iygPzHL16mk32Scl38SIErcWBXEFPSuWnahKRJPEKKw4Sru9xKcp~cXddjho9-baOX8bWQldo6Ep6XntITgA1XMxLp9qzfdKO1YUS-wjlNGRoBaHhdFauqtojbzC7niTOAYtwtQRX-dHhbK80yYaK3QjsAxV24Da2sVotio07zXeVJb3UCC036Q1yjGfIwIg__" // replace with actual image path
-              alt="Team discussion"
+          <div className="relative">
+            <div className="absolute -top-4 -right-4 w-8 h-8 bg-purple-500 rounded-full" />
+            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-orange-300 rounded-full" />
+            <Image
+              src="/placeholder.svg"
+              alt="Team collaboration"
               width={600}
               height={400}
-              className="rounded-lg shadow-lg"
+              className="rounded-lg w-full"
             />
           </div>
-        </div>
+        </section>
+
+        {/* Second Section */}
+        <section className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="relative order-2 md:order-1">
+            <div className="absolute -top-4 -right-4 w-8 h-8 bg-purple-500 rounded-full" />
+            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-orange-300 rounded-full" />
+            <Image
+              src="/placeholder.svg"
+              alt="Developers working"
+              width={600}
+              height={400}
+              className="rounded-lg w-full"
+            />
+          </div>
+          <div className="space-y-6 order-1 md:order-2">
+            <h2 className="text-4xl font-bold">Build the right team to scale</h2>
+            <p className="text-gray-600 text-lg">
+              Finding the right talent is not easy. We help you find the talent that suits your needs, follows your processes, and sticks with you long term (not the case with freelancers
+            </p>
+            <div>
+              <p className="text-lg">
+                Our <Link href="#" className="text-pink-600 hover:text-pink-700">delivery model</Link> helps you cut costs and deliver within budget.
+              </p>
+            </div>
+            <div className="border-l-4 border-pink-600 pl-4 py-2">
+              <blockquote className="text-lg italic text-pink-600">
+                "Simform is quick to identify larger problem with the Software so we decided to expand our scope to build new modules"
+              </blockquote>
+              <div className="flex items-center gap-3 mt-4">
+                <Image
+                  src="/placeholder.svg"
+                  alt="CEO"
+                  width={48}
+                  height={48}
+                  className="rounded-full"
+                />
+                <div>
+                  <p className="font-semibold">Jeewa markram</p>
+                  <p className="text-gray-600">CEO</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Third Section */}
+        <section className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6">
+            <h2 className="text-4xl font-bold">Build the right team to scale</h2>
+            <p className="text-gray-600 text-lg">
+              Finding the right talent is not easy. We help you find the talent that suits your needs, follows your processes, and sticks with you long term (not the case with freelancers
+            </p>
+            <div>
+              <p className="text-lg">
+                Our <Link href="#" className="text-pink-600 hover:text-pink-700">delivery model</Link> helps you cut costs and deliver within budget.
+              </p>
+            </div>
+            <div className="border-l-4 border-pink-600 pl-4 py-2">
+              <blockquote className="text-lg italic text-pink-600">
+                "Simform is quick to identify larger problem with the Software so we decided to expand our scope to build new modules"
+              </blockquote>
+              <div className="flex items-center gap-3 mt-4">
+                <Image
+                  src="/placeholder.svg"
+                  alt="CEO"
+                  width={48}
+                  height={48}
+                  className="rounded-full"
+                />
+                <div>
+                  <p className="font-semibold">Jeewa markram</p>
+                  <p className="text-gray-600">CEO</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="relative">
+            <div className="absolute -top-4 -right-4 w-8 h-8 bg-purple-500 rounded-full" />
+            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-orange-300 rounded-full" />
+            <Image
+              src="/placeholder.svg"
+              alt="Conference presentation"
+              width={600}
+              height={400}
+              className="rounded-lg w-full"
+            />
+          </div>
+        </section>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SoftwareBuildingSection;
+export default SoftwareBuildingSection

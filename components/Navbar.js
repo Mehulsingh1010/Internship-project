@@ -1,116 +1,65 @@
-"use client";
-import React, { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import Link from "next/link"
+import Image from "next/image"
 
-const Navbar = () => {
-  // State to handle mobile menu toggle
-  const [isOpen, setIsOpen] = useState(false);
-
-  // Function to toggle the mobile menu
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
+const Navbar=()=>{
   return (
-    <nav className="bg-white py-4 px-6 shadow-md">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Logo Section */}
-        <div className="flex items-center space-x-2">
-          {/* Replace the src with the path to your logo */}
-          <Image
-            src="/asscets/logo-removebg-preview (1).png" // Ensure this path is inside the public folder
-            alt="Logo"
-            width={32}
-            height={32}
-            className="h-8"
-          />
-          <span className="text-xl font-semibold text-gray-900">
-            Secret<span className=" text-blue-600">Code</span>Wave
-          </span>
-        </div>
+    <header className="fixed top-0 w-full bg-white z-50 border-b">
+      <div className="container mx-auto px-4">
+        <nav className="flex items-center justify-between h-20">
+          <Link href="/" className="flex items-center gap-2">
+            <Image
+              src="/logo.png"
+              alt="The developers logo"
+              width={200}
+              height={32}
+              className="w-[170px] h-[70px]"
+            />
 
-        {/* Desktop Navigation Links */}
-        <ul className="hidden md:flex space-x-8 text-gray-700 font-medium">
-          <li>
-            <Link href="#">Services</Link>
-          </li>
-          <li>
-            <Link href="#">About us </Link>
-          </li>
-          {/*<li>
-            <Link href="#">Case Studies</Link>
-          </li>*/}
-          <li>
-            <Link href="#">Contact us</Link>
-          </li>
-
-          <li>
-            <Link href="#">Hire</Link>
-          </li>
-        </ul>
-
-        {/* Contact Button (visible on desktop only) */}
-        <Link
-          href="#"
-          className="hidden md:inline-block bg-gradient-to-r from-purple-600 to-blue-500 text-white py-2 px-6 rounded-full hover:from-purple-700 hover:to-blue-600 transition ease-in-out"
-        >
-          Contact us
-        </Link>
-
-        {/* Mobile Menu (Hamburger Icon) */}
-        <div className="md:hidden">
-          <button
-            onClick={toggleMenu}
-            className="text-gray-700 focus:outline-none"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+          </Link>
+          
+          <div className="hidden md:flex items-center gap-8">
+            <Link 
+              href="/about"
+              className="text-gray-600 hover:text-gray-900 transition-colors"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              ></path>
-            </svg>
+              About us
+            </Link>
+            <Link 
+              href="/services"
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              Services
+            </Link>
+            <Link 
+              href="/case-studies"
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              Case Studies
+            </Link>
+            <Link 
+              href="/blog"
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              Blog
+            </Link>
+            <Link 
+              href="/how-it-works"
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              How it Works
+            </Link>
+          </div>
+
+          <button 
+            className="bg-[#6941C6] hover:bg-[#5F3AB3] text-white px-4 py-2 rounded-md transition-colors"
+          >
+            Contact us
           </button>
-        </div>
+        </nav>
       </div>
+    </header>
+  )
+}
 
-      {/* Mobile Navigation Menu */}
-      {isOpen && (
-        <div className="md:hidden mt-4 bg-white shadow-md">
-          <ul className="flex flex-col space-y-6 items-center text-gray-700 font-medium py-4">
-            <li>
-              <Link href="#">Services</Link>
-            </li>
-            <li>
-              <Link href="#">About us</Link>
-            </li>
-            <li>
-              <Link href="#">Contact us</Link>
-            </li>
-            <li>
-              <Link href="#">Hire</Link>
-            </li>
-            <li>
-              <Link
-                href="#"
-                className="bg-gradient-to-r from-purple-600 to-blue-500 text-white py-2 px-6 rounded-full text-center hover:from-purple-700 hover:to-blue-600 transition ease-in-out"
-              >
-                Contact us
-              </Link>
-            </li>
-          </ul>
-        </div>
-      )}
-    </nav>
-  );
-};
+export default Navbar
 
-export default Navbar;
