@@ -19,38 +19,37 @@ const caseStudies = [
   }
 ]
 
-const CaseStudies=()=> {
+const CaseStudies = () => {
   return (
     <div className="w-full min-h-screen bg-white relative overflow-hidden">
-
-      <main className="max-w-7xl mx-auto px-4 py-16">
-        <div className="space-y-16">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+        <div className="space-y-8 sm:space-y-12 lg:space-y-16">
           {/* Header */}
-          <div className="text-center space-y-4">
+          <div className="text-center space-y-2 sm:space-y-4">
             <div className="w-12 h-1 bg-purple-600 mx-auto" />
-            <h1 className="text-3xl font-medium text-gray-800">Our recent</h1>
-            <h2 className="text-4xl font-bold text-gray-900">Case studies</h2>
+            <h1 className="text-2xl sm:text-3xl font-medium text-gray-800">Our recent</h1>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Case studies</h2>
           </div>
 
           {/* Case Studies */}
           {caseStudies.map((study, index) => (
-            <div key={index} className="grid lg:grid-cols-2 gap-8 bg-gradient-to-r from-blue-50 to-white rounded-3xl ">
-              {/* Left Side - Image */}
-              <div className="relative h-[480px] w-full">
+            <div key={index} className="flex flex-col lg:flex-row gap-6 lg:gap-8 bg-gradient-to-r from-blue-50 to-white rounded-3xl p-6 sm:p-8">
+              {/* Image */}
+              <div className="relative h-64 sm:h-80 lg:h-[480px] w-full lg:w-1/2">
                 <Image
                   src={study.image}
                   alt={study.title}
                   fill
-                  className=" rounded-2xl"
+                  className="rounded-2xl "
                 />
               </div>
 
-              {/* Right Side - Content */}
-              <div className="flex flex-col justify-center space-y-6">
-                <h3 className="text-3xl font-bold text-gray-900">
+              {/* Content */}
+              <div className="flex flex-col justify-center space-y-4 sm:space-y-6 lg:w-1/2">
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">
                   {study.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                   {study.description}
                 </p>
                 <a
@@ -70,3 +69,4 @@ const CaseStudies=()=> {
 }
 
 export default CaseStudies
+

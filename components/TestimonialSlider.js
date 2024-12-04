@@ -26,23 +26,10 @@ const testimonials = [
     role: "CEO, Tech Innovators",
     avatar: "/avatar.png"
   },
-  {
-    id: 4,
-    text: "Working with Alcaline Solutions has been a game-changer for our business. Their digital marketing strategies have helped us reach new audiences and increase our conversion rates.",
-    author: "Jane Smith",
-    role: "E-commerce Manager",
-    avatar: "/avatar.png"
-  },
-  {
-    id: 5,
-    text: "The level of customer service and attention to detail provided by Alcaline Solutions is unmatched. They truly understand our needs and deliver beyond expectations.",
-    author: "Alex Johnson",
-    role: "Operations Director",
-    avatar: "/avatar.png"
-  }
+  
 ]
 
-const TestimonialSlider=()=>{
+const TestimonialSlider = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
 
   const nextTestimonial = () => {
@@ -54,38 +41,20 @@ const TestimonialSlider=()=>{
   }
 
   return (
-    <div className="w-full min-h-screen bg-white">
+    <div className="w-full h-[70vh] bg-white">
       <main className="max-w-7xl mx-auto px-4 py-16">
         <section className="space-y-12">
           <div className="space-y-4 text-center">
             <div className="w-12 h-1 bg-pink-500 mx-auto" />
-            <h1 className="text-3xl font-medium text-gray-800">Why customers love</h1>
-            <h2 className="text-4xl font-bold text-gray-900">working with us</h2>
+            <h1 className="text-3xl font-medium text-gray-800 sm:text-4xl">Why customers love</h1>
+            <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl">working with us</h2>
           </div>
 
           <div className="relative">
             <div className="flex justify-center items-center">
-              {/* <div className="w-24 h-24 absolute -left-12 top-0">
-                <Image
-                  src="/placeholder.svg"
-                  alt="Quote mark"
-                  width={96}
-                  height={96}
-                  className="text-purple-200"
-                />
-              </div> */}
-              <p className="text-center max-w-3xl text-gray-600 text-lg">
+              <p className="text-center max-w-3xl text-gray-600 text-lg sm:text-xl">
                 {testimonials[currentTestimonial].text}
               </p>
-              {/* <div className="w-24 h-24 absolute -right-12 bottom-0 transform rotate-180">
-                <Image
-                  src="/placeholder.svg"
-                  alt="Quote mark"
-                  width={96}
-                  height={96}
-                  className="text-purple-200"
-                />
-              </div> */}
             </div>
           </div>
 
@@ -97,7 +66,7 @@ const TestimonialSlider=()=>{
                   index === currentTestimonial ? 'scale-110' : 'scale-100 opacity-50'
                 }`}
               >
-                <div className="w-16 h-16 relative rounded-full overflow-hidden">
+                <div className="w-16 h-16 relative rounded-full overflow-hidden sm:w-20 sm:h-20">
                   <Image
                     src={testimonial.avatar}
                     alt={testimonial.author}
@@ -112,8 +81,8 @@ const TestimonialSlider=()=>{
                     </svg>
                   ))}
                 </div>
-                <p className="font-medium text-gray-800">{testimonial.author}</p>
-                <p className="text-sm text-gray-600">{testimonial.role}</p>
+                <p className="font-medium text-gray-800 text-sm sm:text-base">{testimonial.author}</p>
+                <p className="text-xs text-gray-600 sm:text-sm">{testimonial.role}</p>
               </div>
             ))}
           </div>
@@ -139,4 +108,3 @@ const TestimonialSlider=()=>{
 }
 
 export default TestimonialSlider
-
