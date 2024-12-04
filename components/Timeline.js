@@ -1,86 +1,58 @@
-// // components/Timeline.js
-// import React from "react";
+import Image from 'next/image'
 
-// const Timeline = () => {
-//   const steps = [
-//     {
-//       number: "#1",
-//       title: "Assemble the right team",
-//       description:
-//         "We handle all aspects of vetting and choosing the right team that you don't have the time, expertise, or desire to do.",
-//     },
-//     {
-//       number: "#2",
-//       title: "Sprint planning",
-//       description:
-//         "Sprint roadmap is a collective planning effort. Team members collaborate to clarify items and ensure shared understanding.",
-//     },
-//     {
-//       number: "#3",
-//       title: "Tech architecture",
-//       description:
-//         "We break monolithic apps into microservices. Decoupling the code allows teams to move faster and more independently.",
-//     },
-//     {
-//       number: "#4",
-//       title: "Standups & weekly demos",
-//       description:
-//         "Standups, weekly demos, and weekly reviews make sure everyone is on the same page and can raise their concerns.",
-//     },
-//     {
-//       number: "#5",
-//       title: "Code reviews",
-//       description:
-//         "Code reviews before release help detect issues like memory leaks, file leaks, performance signs, and general bad smells.",
-//     },
-//     {
-//       number: "#6",
-//       title: "Iterative delivery",
-//       description:
-//         "We divide the implementation process into several checkpoints rather than a single deadline.",
-//     },
-//   ];
+const Timeline=()=>{
+  return (
+    <div className="w-full max-w-7xl mx-auto px-4 py-16">
+      {/* Header */}
+      <div className="text-center mb-16">
+        <div className="w-12 h-1 bg-[#B829DD] mx-auto mb-4" />
+        <h2 className="text-2xl md:text-3xl lg:text-4xl mb-2">How development</h2>
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold">
+          through Alcaline works
+        </h1>
+      </div>
 
-//   return (
-//     <div className="max-w-6xl mx-auto py-16 px-4 sm:px-6 lg:px-8 ">
-//       <h2 className="text-center text-4xl font-bold mb-16">
-//         How development{" "}
-//         <span className="text-purple-600">through Alcaline</span> works
-//       </h2>
-//       <div className="relative">
-//         {/* Horizontal timeline line */}
-//         <div className="absolute inset-0 flex justify-center items-center">
-//           <div className="w-full h-1 bg-purple-300 absolute top-1/2"></div>
-//         </div>
+      {/* Cards and Timeline */}
+      <div className="space-y-8">
+        {/* First row of cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {renderCard("#1", "Assemble the right team", "We handle all aspects of vetting and choosing the right team that you don't have the time, expertise, or desire to do.")}
+          {renderCard("#3", "Tech architecture", "We break monolithic apps into microservices. Decoupling the code allows teams to move faster and more independently")}
+          {renderCard("#5", "Code reviews", "Code reviews before release help detect issues like memory leaks, file leaks, performance signs, and general bad smells")}
+        </div>
 
-//         {/* Timeline Steps */}
-//         <div className="grid grid-cols-1 md:grid-cols-3 gap-y-16 md:gap-x-6">
-//           {steps.map((step, index) => (
-//             <div
-//               key={index}
-//               className="relative flex flex-col items-center text-center"
-//             >
-//               {/* Connecting line for smaller screens */}
-//               {index < steps.length - 1 && (
-//                 <div className="block md:hidden w-0.5 h-10 bg-purple-300"></div>
-//               )}
+        {/* Timeline image */}
+        <div className="hidden md:block relative">
+          <Image
+            src="/timeline.png?height=50&width=1000"
+            alt="Development timeline"
+            width={1000}
+            height={50}
+            className="w-full h-auto"
+          />
+         
+        </div>
 
-//               {/* Step Indicator Circle */}
-//               <div className="flex items-center justify-center w-14 h-14 rounded-full bg-purple-600 text-white text-lg font-bold absolute -top-10 md:static md:mb-6">
-//                 {step.number}
-//               </div>
+        {/* Second row of cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {renderCard("#2", "Sprint planning", "Sprint roadmap is a collective planning effort. Team members collaborate to clarify items and ensure shared understanding.")}
+          {renderCard("#4", "Standups & weekly demos", "Standups, weekly demos, and weekly reviews make sure everyone is on the same page and can raise their concerns.")}
+          {renderCard("#6", "Iterative delivery", "We divide the implementation process into several checkpoints rather than a single deadline.")}
+        </div>
+      </div>
+    </div>
+  )
+}
 
-//               {/* Step Content */}
-//               <div className="bg-white p-8 rounded-lg shadow-lg mt-10 md:mt-0">
-//                 <h3 className="font-semibold text-xl mb-4">{step.title}</h3>
-//                 <p className="text-gray-600">{step.description}</p>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
+function renderCard(number,title,description) {
+  return (
+    <div className="bg-white p-6 rounded-lg shadow-sm">
+      <div className="text-[#FF4365] font-medium mb-2">{number} {title}</div>
+      <p className="text-gray-600">{description}</p>
+    </div>
+  )
+}
 
-// export default Timeline;
+
+
+export default Timeline
