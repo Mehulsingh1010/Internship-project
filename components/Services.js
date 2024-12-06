@@ -1,7 +1,7 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
-import { ChevronLeft, ChevronRight, Code, Smartphone, TestTube } from 'lucide-react'
+import React, { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight, Code, Smartphone, TestTube } from 'lucide-react';
 
 const services = [
   {
@@ -29,42 +29,42 @@ const services = [
     title: "Mobile App Testing",
     description: "A Website is an extension of yourself and we can help you to express it properly. Your website is your number one marketing asset because we live in a digital age."
   },
-]
+];
 
 const ServicesSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isMobile, setIsMobile] = useState(false)
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % services.length)
-  }
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % services.length);
+  };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + services.length) % services.length)
-  }
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + services.length) % services.length);
+  };
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 5000)
-    return () => clearInterval(timer)
-  }, [])
+    const timer = setInterval(nextSlide, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
-  }, [])
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const getVisibleServices = () => {
-    const visibleServices = [...services]
-    visibleServices.push(services[0]) 
-    return visibleServices
-  }
+    const visibleServices = [...services];
+    visibleServices.push(services[0]); 
+    return visibleServices;
+  };
 
   return (
-    <div className="relative w-full max-w-6xl mx-auto px-4 py-8 h-[60vh] mmd:t-[-80px] md:mb-[80px] md:py-12">
+    <div className="relative w-full max-w-6xl mx-auto md:mt-[-90px] px-4 py-8 h-[60vh] md:py-12">
       <div className="w-12 h-1 bg-pink-500 mb-10 mx-auto" />
       <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 md:mb-8">Services we offer</h2>
       <div className="relative overflow-hidden">
@@ -75,12 +75,12 @@ const ServicesSection = () => {
           {getVisibleServices().map((service, index) => (
             <div 
               key={index} 
-              className={`w-full md:w-1/2 lg:w-1/3 mb-10 flex-shrink-0 px-2 ${
-                !isMobile && index === currentIndex + 1 ? 'mt-4' : ''
+              className={`w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-2 ${
+                isMobile && index !== currentIndex ? 'mt-6' : !isMobile && index === currentIndex + 1 ? 'mt-4' : ''
               }`}
             >
               <div 
-                className={`bg-white p-4  md:mb-10 rounded-lg shadow-lg transition-all duration-300 h-full ${
+                className={`bg-white p-4 rounded-lg shadow-lg transition-all duration-300 h-full ${
                   !isMobile && index === currentIndex + 1 ? 'border-2 border-purple-500 scale-105' : ''
                 }`}
               >
@@ -93,19 +93,22 @@ const ServicesSection = () => {
             </div>
           ))}
         </div>
+        {/* Left Navigation Button */}
+        <button 
+          onClick={prevSlide}
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10 flex items-center justify-center"
+        >
+          <ChevronLeft className="w-4 h-4 md:w-6 md:h-6 text-gray-600" />
+        </button>
+        {/* Right Navigation Button */}
+        <button 
+          onClick={nextSlide}
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10 flex items-center justify-center"
+        >
+          <ChevronRight className="w-4 h-4 md:w-6 md:h-6 text-gray-600" />
+        </button>
       </div>
-      <button 
-        onClick={prevSlide}
-        className="absolute top-1/2 left-0 -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10"
-      >
-        <ChevronLeft className="w-4 h-4 md:w-6 md:h-6 text-gray-600" />
-      </button>
-      <button 
-        onClick={nextSlide}
-        className="absolute top-1/2 right-0 -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10"
-      >
-        <ChevronRight className="w-4 h-4 md:w-6 md:h-6 text-gray-600" />
-      </button>
+
       <div className="flex justify-center mt-4 md:mt-6 space-x-2">
         {services.map((_, index) => (
           <button
@@ -128,8 +131,7 @@ const ServicesSection = () => {
         <span className="text-lg md:text-xl font-semibold text-gray-300">05</span>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ServicesSection
-
+export default ServicesSection;

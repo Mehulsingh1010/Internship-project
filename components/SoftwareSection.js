@@ -5,7 +5,7 @@ import { ArrowRight, Play } from 'lucide-react'
 
 const SoftwareSection=()=> {
   return (
-    <div className="h-screen w-full">
+    <div className="h-screen mb-[100px] w-full">
       {/* <Image className=' sd:hidden absolute  left-[80px]' src='/ball.png' alt='a' width={100} height={100}/> */}
       <div className="mx-auto grid h-full max-w-[1400px] grid-cols-1 items-center gap-20 px-12 lg:grid-cols-2">
         {/* Left Column */}
@@ -37,12 +37,12 @@ const SoftwareSection=()=> {
         </div>
 
         {/* Right Column */}
-        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-gray-100">
+        <div className="relative mt-10 aspect-[4/3] w-full overflow-hidden rounded-3xl bg-gray-100">
           <Image
             src="/vid.png"
             alt="Team collaboration"
             fill
-            className="object-cover"
+            className=" object-cover"
           />
           {/* Play Button Overlay */}
           

@@ -14,8 +14,10 @@ import Timeline from "@/components/Timeline";
 
 export default function Home() {
   return (
-    <div className=" overflow-hidden">
+    <div>
       <Navbar />
+    <div className="md:pl-10 md:pr-10 overflow-hidden">
+      
       <HeroSection /> 
       <SoftwareSection />
       <ServicesSection />
@@ -29,6 +31,6 @@ export default function Home() {
       <FeaturedResources />
     
       <Footer /> 
-    </div>
+    </div></div>
   );
 }

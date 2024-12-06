@@ -2,22 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global font and body styles */
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+/* Scrollbar Customization */
+/* Hide scrollbar for Chrome, Safari, and Opera */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
-
-/* Hide scrollbar for IE, Edge and Firefox */
+/* Hide scrollbar for IE, Edge, and Firefox */
 .scrollbar-hide {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+/* CSS Variables for Themes */
 @layer base {
   :root {
+    /* Light Theme */
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
@@ -44,7 +48,9 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
+    /* Dark Theme */
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
@@ -71,16 +77,19 @@ body {
     --chart-5: 340 75% 55%;
   }
 }
+
+/* Tailwind Applied Styles */
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
-/* globals.css or your custom stylesheet */
 
+/* Banner Animation */
 @keyframes bannerScroll {
   0% {
     transform: translateX(0);
