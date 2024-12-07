@@ -24,31 +24,26 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             <Link
-              href="/about"
+              href=""
               className="text-gray-600 hover:text-gray-900 transition-colors"
             >
               About us
             </Link>
             <Link
-              href="/services"
+              href=""
               className="text-gray-600 hover:text-gray-900 transition-colors"
             >
               Services
             </Link>
             <Link
-              href="/case-studies"
+              href=""
               className="text-gray-600 hover:text-gray-900 transition-colors"
             >
               Case Studies
             </Link>
+           
             <Link
-              href="/blog"
-              className="text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              Blog
-            </Link>
-            <Link
-              href="/how-it-works"
+              href=""
               className="text-gray-600 hover:text-gray-900 transition-colors"
             >
               How it Works
@@ -125,15 +120,7 @@ const Navbar = () => {
                   Case Studies
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="text-gray-600 hover:text-gray-900 transition-colors block"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Blog
-                </Link>
-              </li>
+              
               <li>
                 <Link
                   href="/how-it-works"
