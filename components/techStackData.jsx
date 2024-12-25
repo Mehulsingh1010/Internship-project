@@ -120,12 +120,14 @@ const TechStackSection = () => {
       {/* Header */}
       <div className="text-center mb-16">
         <div className="inline-block">
-          <h2 className="text-4xl font-medium mb-2">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
             Our
-            <div className="h-1 bg-purple-600 mt-2"></div>
+            <span className="block bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+              Tech Stack
+            </span>
           </h2>
         </div>
-        <h1 className="text-4xl font-bold">Tech Stack</h1>
+        
       </div>
 
       {/* Category Navigation */}
